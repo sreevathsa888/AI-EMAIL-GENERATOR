@@ -1,0 +1,94 @@
+/* Background and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  background: url("assets/email123.webp") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+/* Reset spacing for headings */
+h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Shared card styling */
+.card, .card1 {
+  background: rgba(255, 255, 255, 0.1); /* frosted glass look */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 30px 40px;
+  margin: 60px auto;
+  width: 90%;
+  max-width: 500px;
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.card:hover, .card1:hover {
+  transform: scale(1.02);
+}
+
+/* Form layout inside card */
+.card form, .card1 form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+/* Input fields */
+textarea, input[type="text"], input[type="email"] {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  outline: none;
+}
+
+textarea::placeholder, input::placeholder {
+  color: #ccc;
+}
+
+/* Buttons */
+button {
+  border: none;
+  height: 40px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0056b3, #0096c7);
+  transform: translateY(-2px);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #00c6ff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 600px) {
+  .card, .card1 {
+    padding: 20px;
+    margin: 30px auto;
+  }
+}
