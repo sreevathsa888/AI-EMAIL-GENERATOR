@@ -75,6 +75,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 🔄 API Integration
 ➤ POST / (from React)
+
 {
   "success": true,
   "email_id": "17d8f654c4b7f5f6",
