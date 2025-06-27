@@ -1,12 +1,105 @@
-# React + Vite
+# ✉️ AI-Powered Email Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An intelligent web app that takes summary points from a user, uses **Google's Gemini Pro** API to generate a professional email, and sends it via **Gmail API** — all from a clean and modern React UI with a Python Flask backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔥 Generate polished email copy using AI (Gemini Pro)
+- 📧 Send emails automatically with Gmail API (OAuth2)
+- 🌐 Sleek React frontend with responsive design
+- 🔒 Secure token-based Google authentication
+- 🌙 Dark mode UI with animated background visuals
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+---
+
+## 🛠 Tech Stack
+
+| Layer       | Tech                           |
+|-------------|--------------------------------|
+| Frontend    | React + Vite + Tailwind CSS    |
+| Backend     | Flask                          |
+| AI Email    | Google Generative AI (Gemini)  |
+| Mail Sender | Gmail API (OAuth2)             |
+
+---
+
+## 📦 Folder Structure
+email-generator/
+│
+├── frontend/ # React app (Vite + JSX)
+│ └── src/
+│ ├── App.jsx
+│ ├── EmailApp.jsx
+│ ├── Landing.jsx
+│ └── index.css
+│
+├── backend/ # Flask backend
+│ ├── app.py
+│ ├── credentials.json # Gmail OAuth creds
+│ └── token.json # Gmail token (auto-generated)
+│
+├── assets/
+│ └── email123.webp # Background image
+│
+├── screenshots/ # For README screenshots
+│
+└── README.md
+
+
+✅ 2. Setup Python Flask Backend
+cd backend
+pip install -r requirements.txt
+python app.py
+
+Required Files:
+
+credentials.json → from Google Cloud Console
+
+token.json → will be generated on first Gmail OAuth login
+
+✅ 3. Setup React Frontend
+cd frontend
+npm install
+npm run dev
+
+🔑 Environment Variables 
+# .env (backend)
+GEMINI_API_KEY=your_gemini_key_here
+
+import os
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+🔄 API Integration
+➤ POST / (from React)
+{
+  "success": true,
+  "email_id": "17d8f654c4b7f5f6",
+  "subject": "Introducing Our New AI Tool!",
+  "body": "We're excited to announce..."
+}
+
+ Powered By
+Gemini Pro (Google Generative AI)
+
+Gmail API (OAuth2)
+
+Flask
+
+React + Vite
+
+ To-Do Enhancements
+ Add login with Google (OAuth)
+
+ Email preview in UI before sending
+
+ Export email as PDF
+
+ Add email templates/themes
+
+ 📝 License
+MIT © 2025 — oleti sree vathsa
+
