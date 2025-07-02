@@ -49,7 +49,7 @@ email-generator/
 │
 └── README.md
 
-SCREENSHOTS:
+✅SCREENSHOTS:
 
 ![Screenshot 2025-07-02 123046](https://github.com/user-attachments/assets/e9f5779e-6f87-44f1-b31e-f6a77f0d27c0)
 
@@ -94,7 +94,8 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
   "body": "We're excited to announce..."
 }
 
- Powered By
+✅ Powered By:
+
 Gemini Pro (Google Generative AI)
 
 Gmail API (OAuth2)
@@ -103,7 +104,8 @@ Flask
 
 React + Vite
 
- To-Do Enhancements
+✅ To-Do Enhancements:
+ 
  Add login with Google (OAuth)
 
  Email preview in UI before sending
