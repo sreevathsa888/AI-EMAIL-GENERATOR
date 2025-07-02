@@ -16,15 +16,14 @@ An intelligent web app that takes summary points from a user, uses **Google's Ge
 
 ---
 
-## 🛠 Tech Stack
+## 🧰 Tech Stack
 
-| Layer       | Tech                           |
+| Layer       | Technology                     |
 |-------------|--------------------------------|
-| Frontend    | React + Vite + Tailwind CSS    |
-| Backend     | Flask                          |
-| AI Email    | Google Generative AI (Gemini)  |
-| Mail Sender | Gmail API (OAuth2)             |
-
+| Frontend    | React + Vite + JSX + Tailwind  |
+| Backend     | Python + Flask                 |
+| AI Service  | Google Generative AI (Gemini)  |
+| Email API   | Gmail API + OAuth2             |
 ---
 
 ## 📦 Folder Structure
@@ -59,23 +58,16 @@ email-generator/
 
 
 
+---
 
+## ⚙️ How to Run This Project in VS Code
 
-✅ 2. Setup Python Flask Backend
-cd backend
-pip install -r requirements.txt
-python app.py
+### 📥 Step 1: Clone the Repository
 
-Required Files:
+```bash
+git clone https://github.com/your-username/ai-email-generator.git
+cd ai-email-generator
 
-credentials.json → from Google Cloud Console
-
-token.json → will be generated on first Gmail OAuth login
-
-✅ 3. Setup React Frontend
-cd frontend
-npm install
-npm run dev
 
 🔑 Environment Variables 
 # .env (backend)
