@@ -56,17 +56,43 @@ email-generator/
 
 ![Screenshot 2025-07-02 124142](https://github.com/user-attachments/assets/5b5bedbd-b82a-48b5-9538-72ed592fabf3)
 
+🖥 Step 2: Open in VS Code
+Open Visual Studio Code
+
+Click File → Open Folder... → Select the main project folder
+
+📦 Step 3: Run the Frontend (React)
+In the VS Code terminal:
+
+cd frontend
+npm install
+npm run dev
+
+This starts the frontend UI at:
+🌐 http://localhost:5173
+
+🧠 Step 4: Run the Backend (Flask + Gemini + Gmail)
+Open a new terminal tab in VS Code:
+
+cd backend
+python app.py
+
+This will run the Flask backend at:
+🌐 http://localhost:5000
 
 
----
+✅ Final Result
+Visit http://localhost:5173/email
 
-## ⚙️ How to Run This Project in VS Code
+Enter summary points (e.g., “Launch new AI product with 20% discount”)
 
-### 📥 Step 1: Clone the Repository
+The backend will:
 
-```bash
-git clone https://github.com/your-username/ai-email-generator.git
-cd ai-email-generator
+Generate subject + body via Gemini
+
+Send the email using Gmail API
+
+You will see a success message with subject, body, and email ID.
 
 
 🔑 Environment Variables 
