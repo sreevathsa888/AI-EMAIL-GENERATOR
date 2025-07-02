@@ -48,10 +48,15 @@ email-generator/
 ├── screenshots/ # For README screenshots
 │
 └── README.md
+
 SCREENSHOTS:
 
 ![Screenshot 2025-07-02 123046](https://github.com/user-attachments/assets/e9f5779e-6f87-44f1-b31e-f6a77f0d27c0)
+
 ![Screenshot 2025-07-02 123054](https://github.com/user-attachments/assets/863b2537-e93b-4ca0-8e8f-e405c05da1cd)
+
+![Screenshot 2025-07-02 124142](https://github.com/user-attachments/assets/5b5bedbd-b82a-48b5-9538-72ed592fabf3)
+
 
 
 
