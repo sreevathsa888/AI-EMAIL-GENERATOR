@@ -65,7 +65,9 @@ Click File → Open Folder... → Select the main project folder
 In the VS Code terminal:
 
 cd templates/email
+
 npm install
+
 npm run dev
 
 This starts the frontend UI at:
