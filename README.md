@@ -64,7 +64,7 @@ Click File → Open Folder... → Select the main project folder
 📦 Step 3: Run the Frontend (React)
 In the VS Code terminal:
 
-cd frontend
+cd templates/email
 npm install
 npm run dev
 
@@ -74,8 +74,8 @@ This starts the frontend UI at:
 🧠 Step 4: Run the Backend (Flask + Gemini + Gmail)
 Open a new terminal tab in VS Code:
 
-cd backend
 python app.py
+
 
 This will run the Flask backend at:
 🌐 http://localhost:5000
