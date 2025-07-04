@@ -12,6 +12,8 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
+import json
+from io import StringIO
 
 
 # ── 1. Configuration ────────────────────────────────────────────────────────────
@@ -34,20 +36,26 @@ CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 # ── 2. Gmail OAuth helper ───────────────────────────────────────────────────────
 def get_gmail_service():
     creds = None
-    if os.path.exists("token.json"):
-        creds = Credentials.from_authorized_user_file("token.json", SCOPES)
+    creds_data = os.getenv("GOOGLE_TOKEN_JSON")
+    creds_dict = json.loads(creds_data) if creds_data else None
+
+    if creds_dict:
+        creds = Credentials.from_authorized_user_info(creds_dict, SCOPES)
 
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+            creds_json = os.getenv("GOOGLE_CREDENTIALS_JSON")
+            if not creds_json:
+                raise RuntimeError("❌ GOOGLE_CREDENTIALS_JSON not set in .env")
+            flow = InstalledAppFlow.from_client_config(json.loads(creds_json), SCOPES)
             creds = flow.run_local_server(port=8080, access_type="offline", prompt="consent")
-        with open("token.json", "w") as token_file:
-            token_file.write(creds.to_json())
+
+            # Optionally: log token to console to update .env manually
+            print("🔐 NEW GOOGLE_TOKEN_JSON:\n", creds.to_json())
 
     return build("gmail", "v1", credentials=creds)
-
 # ── 3. Email-generation helpers ────────────────────────────────────────────────
 def generate_email(summary: str) -> tuple[str, str]:
     """Return (subject, body) from Gemini."""
