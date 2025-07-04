@@ -31,7 +31,7 @@ gemini_model = genai.GenerativeModel("models/gemini-1.5-flash")
 
 # Flask app
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+CORS(app, resources={r"/*": {"origins": "https://ai-email-generator-1-dcno.onrender.com"}})
 
 # ── 2. Gmail OAuth helper ───────────────────────────────────────────────────────
 def get_gmail_service():
@@ -104,7 +104,7 @@ def send_email_via_gmail(subject: str, body: str, to_email: str) -> str:
 @app.route("/", methods=["GET"])
 def to_react():
     """Redirect root GET to React app."""
-    return redirect("http://localhost:5173/email")
+    return redirect("https://ai-email-generator-1-dcno.onrender.com/email")
 
 @app.route("/", methods=["POST"])
 def handle_generate_and_send():
