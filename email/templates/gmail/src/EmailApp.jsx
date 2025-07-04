@@ -10,7 +10,7 @@ export default function EmailApp() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/", {
+      const res = await fetch("https://ai-email-generator-lsjj.onrender.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
