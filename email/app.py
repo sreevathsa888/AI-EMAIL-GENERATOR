@@ -125,4 +125,5 @@ def handle_generate_and_send():
 # ── 5. Entrypoint ──────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     port = int(os.getenv("FLASK_RUN_PORT", 5000))
-    app.run(debug=True, port=port)
+    app.run(debug=True, host="0.0.0.0", port=port)  # 👈 ADD `host="0.0.0.0"`
+
